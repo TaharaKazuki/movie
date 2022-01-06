@@ -1,10 +1,14 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
+import logger from 'redux-logger'
 import moviesReducer from '../features/movies/movieSlice'
 
+const reducer = {
+  movies: moviesReducer,
+}
+
 export const store = configureStore({
-  reducer: {
-    movies: moviesReducer,
-  },
+  reducer,
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 })
 
 export type AppDispatch = typeof store.dispatch
