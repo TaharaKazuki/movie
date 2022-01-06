@@ -1,8 +1,15 @@
 import React from 'react'
-import './App.css'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Home from 
+
+import './App.scss'
 
 function App() {
-  return <div className="app"></div>
+  return (
+    <div className="app">
+      <Router></Router>
+    </div>
+  )
 }
 
 export default App
