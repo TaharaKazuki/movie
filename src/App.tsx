@@ -1,13 +1,15 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Home from 
+import Header from './components/Header/Header'
 
 import './App.scss'
 
 function App() {
   return (
     <div className="app">
-      <Router></Router>
+      <Router>
+        <Header />
+      </Router>
     </div>
   )
 }
