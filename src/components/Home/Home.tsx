@@ -7,7 +7,7 @@ import {
 } from '../../features/movies/movieSlice'
 
 // component
-// import MovieListing from '../MovieListing/MovieListing'
+import MovieListing from '../MovieListing/MovieListing'
 
 const Home = () => {
   const dispatch = useAppDispatch()
@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div>
       <div className="banner-img" />
-      {/* <MovieListing /> */}
+      <MovieListing />
     </div>
   )
 }
