@@ -3,6 +3,8 @@ import { useAppSelector } from '../../app/hooks'
 
 // component
 import MovieCard from '../MovieCard/MovieCard'
+// style
+import '../MovieListing/MovieListing.scss'
 // type
 import responseType from '../../common/apis/response.json'
 
