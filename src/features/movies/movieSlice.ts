@@ -2,6 +2,8 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
 import movieApi from '../../common/apis/movieApi'
 import { APIKey } from '../../common/apis/MovieApiKey'
 
+import responseType from '../../common/apis/response.json'
+
 export const fetchAsyncMovies = createAsyncThunk(
   'movies/fetchAsyncMovies',
   async () => {
@@ -33,9 +35,9 @@ export const fetchAsyncMovieOrShowDetail = createAsyncThunk(
 )
 
 interface IMoviesState {
-  movies: {} | any
-  shows: {} | any
-  selectMovies: {} | any
+  movies: {} | typeof responseType
+  shows: {} | typeof responseType
+  selectMovies: {} | typeof responseType
 }
 
 const initialState: IMoviesState = {
