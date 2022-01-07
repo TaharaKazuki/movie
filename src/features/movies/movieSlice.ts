@@ -3,6 +3,7 @@ import movieApi from '../../common/apis/movieApi'
 import { APIKey } from '../../common/apis/MovieApiKey'
 
 import responseType from '../../common/apis/response.json'
+import responseDetail from '../../common/apis/responseDetail.json'
 
 export const fetchAsyncMovies = createAsyncThunk(
   'movies/fetchAsyncMovies',
@@ -28,7 +29,7 @@ export const fetchAsyncShows = createAsyncThunk(
 
 export const fetchAsyncMovieOrShowDetail = createAsyncThunk(
   'movies/fetchAsyncMovieOrShowDetail',
-  async (id: number) => {
+  async (id: string) => {
     const response = await movieApi.get(`?apiKey=${APIKey}&i=${id}&Plot=full`)
     return response.data
   }
@@ -37,7 +38,7 @@ export const fetchAsyncMovieOrShowDetail = createAsyncThunk(
 interface IMoviesState {
   movies: {} | typeof responseType
   shows: {} | typeof responseType
-  selectMovies: {} | typeof responseType
+  selectMovies: {} | typeof responseDetail
 }
 
 const initialState: IMoviesState = {
@@ -70,7 +71,7 @@ const moviesSlice = createSlice({
     builder.addCase(
       fetchAsyncMovieOrShowDetail.fulfilled,
       (state, { payload }) => {
-        return { ...state, selectMoviesOrShow: payload }
+        return { ...state, selectMovies: payload }
       }
     )
   },

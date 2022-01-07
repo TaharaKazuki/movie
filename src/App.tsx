@@ -6,7 +6,7 @@ import Footer from './components/Footer/Footer'
 // page components
 import Home from './components/Home/Home'
 import PageNotFound from './components/PageNotFound/PageNotFound'
-// import MovieDetail from './components/MovieDetail/MovieDetail'
+import MovieDetail from './components/MovieDetail/MovieDetail'
 
 import './App.scss'
 
@@ -18,7 +18,7 @@ function App() {
         <div className="container">
           <Switch>
             <Route path="/" exact component={Home} />
-            {/* <Route path="/movie/:imdbID" component={MovieDetail} /> */}
+            <Route path="/movie/:imdbID" component={MovieDetail} />
             <Route component={PageNotFound} />
           </Switch>
         </div>
