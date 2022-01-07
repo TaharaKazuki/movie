@@ -1,5 +1,4 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
-import { useAppSelector } from '../../app/hooks'
 import movieApi from '../../common/apis/movieApi'
 import { APIKey } from '../../common/apis/MovieApiKey'
 
